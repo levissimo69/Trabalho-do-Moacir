@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Forte — plataforma de apoio à gestão e crescimento de pequenos negócios.">
+    <title>Forte | Seu negócio em números</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- =========================
+         APP SHELL
+    ========================== -->
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand-symbol">F</div>
+                <div class="brand-text">
+                    <strong>forte</strong>
+                    <span>pequeno negócio</span>
+                </div>
+            </div>
+
+            <div class="company-selector" id="company-selector" tabindex="0">
+                <div class="company-avatar">MS</div>
+                <div class="company-info">
+                    <strong id="company-name-sidebar">Mercadinho Silva</strong>
+                    <span>Plano Profissional</span>
+                </div>
+                <span class="chevron">⌄</span>
+
+                <div class="company-menu" id="company-menu">
+                    <button data-company="Mercadinho Silva" data-initials="MS">MS · Mercadinho Silva</button>
+                    <button data-company="Oficina Norte" data-initials="ON">ON · Oficina Norte</button>
+                    <button data-company="Doce Ponto" data-initials="DP">DP · Doce Ponto</button>
+                    <button class="company-add" id="add-company">+ Adicionar negócio</button>
+                </div>
+            </div>
+
+            <nav class="main-nav" aria-label="Navegação principal">
+                <p class="nav-label">VISÃO DO NEGÓCIO</p>
+
+                <button class="nav-item active" data-view="overview">
+                    <span class="nav-icon">⌂</span>
+                    <span>Visão geral</span>
+                </button>
+
+                <button class="nav-item" data-view="analytics">
+                    <span class="nav-icon">◩</span>
+                    <span>Estatísticas</span>
+                </button>
+
+                <p class="nav-label">OPERAÇÃO</p>
+
+                <button class="nav-item" data-view="finance">
+                    <span class="nav-icon">R$</span>
+                    <span>Financeiro</span>
+                </button>
+
+                <button class="nav-item" data-view="stock">
+                    <span class="nav-icon">▦</span>
+                    <span>Estoque</span>
+                </button>
+
+                <button class="nav-item" data-view="sales">
+                    <span class="nav-icon">↗</span>
+                    <span>Vendas</span>
+                </button>
+
+                <button class="nav-item" data-view="customers">
+                    <span class="nav-icon">♙</span>
+                    <span>Clientes</span>
+                </button>
+
+                <p class="nav-label">CRESCIMENTO</p>
+
+                <button class="nav-item" data-view="growth">
+                    <span class="nav-icon">✦</span>
+                    <span>Oportunidades</span>
+                </button>
+
+                <button class="nav-item" data-view="store">
+                    <span class="nav-icon">◇</span>
+                    <span>Vitrine digital</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="support-link" id="support-btn">
+                    <span>?</span>
+                    Central de ajuda
+                </button>
+
+                <div class="user-profile">
+                    <div class="user-avatar">US</div>
+                    <div>
+                        <strong>Administrador</strong>
+                        <span>Conta proprietária</span>
+                    </div>
+                    <button class="more-btn" aria-label="Mais opções">•••</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="main">
+            <header class="topbar">
+                <div class="mobile-brand">
+                    <button class="menu-btn" id="menu-btn" aria-label="Abrir menu">☰</button>
+                    <div class="mobile-brand-symbol">F</div>
+                    <strong>forte</strong>
+                </div>
+
+                <div class="page-heading">
+                    <p class="eyebrow">PAINEL DO NEGÓCIO</p>
+                    <h1 id="page-title">Visão geral</h1>
+                </div>
+
+                <div class="topbar-actions">
+                    <button class="period-selector" id="period-selector">
+                        <span>Período:</span>
+                        <strong id="period-label">Este mês</strong>
+                        <span>⌄</span>
+                    </button>
+
+                    <button class="icon-button notification-button" id="notification-btn" aria-label="Notificações">
+                        <span class="bell">♢</span>
+                        <i></i>
+                    </button>
+
+                    <button class="primary-button" id="quick-action-btn">
+                        <span>+</span>
+                        <span>Ação rápida</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- =========================
+                 VIEW: OVERVIEW
+            ========================== -->
+            <section class="view active" id="view-overview">
+
+                <div class="hero-banner">
+                    <div class="hero-copy">
+                        <span class="soft-pill">SEU NEGÓCIO, EM UMA VISÃO</span>
+                        <h2>Bom dia USER.</h2>
+                        <p>Veja o que está acontecendo no seu negócio e encontre oportunidades para crescer.</p>
+                    </div>
+
+                    <div class="hero-summary">
+                        <div class="hero-summary-item">
+                            <span>Resultado do mês</span>
+                            <strong id="hero-result">R$ 5.270</strong>
+                        </div>
+                        <div class="hero-divider"></div>
+                        <div class="hero-summary-item">
+                            <span>vs. mês anterior</span>
+                            <strong class="positive">+18,7%</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-grid">
+                    <article class="metric-card">
+                        <div class="metric-top">
+                            <span>Faturamento</span>
+                            <span class="metric-icon green">R$</span>
+                        </div>
+                        <strong id="metric-revenue">R$ 8.450,00</strong>
+                        <div class="metric-bottom">
+                            <span class="positive">↑ 12,4%</span>
+                            <span>vs. mês anterior</span>
+                        </div>
+                    </article>
+
+                    <article class="metric-card">
+                        <div class="metric-top">
+                            <span>Resultado</span>
+                            <span class="metric-icon blue">✓</span>
+                        </div>
+                        <strong id="metric-profit">R$ 5.270,00</strong>
+                        <div class="metric-bottom">
+                            <span class="positive">↑ 18,7%</span>
+                            <span>margem 62,4%</span>
+                        </div>
+                    </article>
+
+                    <article class="metric-card">
+                        <div class="metric-top">
+                            <span>Vendas</span>
+                            <span class="metric-icon purple">↗</span>
+                        </div>
+                        <strong id="metric-sales">126</strong>
+                        <div class="metric-bottom">
+                            <span class="positive">↑ 9,5%</span>
+                            <span>neste mês</span>
+                        </div>
+                    </article>
+
+                    <article class="metric-card">
+                        <div class="metric-top">
+                            <span>Clientes ativos</span>
+                            <span class="metric-icon orange">♙</span>
+                        </div>
+                        <strong id="metric-customers">184</strong>
+                        <div class="metric-bottom">
+                            <span class="positive">+18</span>
+                            <span>novos no mês</span>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="section-grid two-columns">
+                    <article class="card performance-card">
+                        <div class="card-header">
+                            <div>
+                                <span class="section-kicker">DESEMPENHO</span>
+                                <h3>Como seu negócio está evoluindo</h3>
+                            </div>
+                            <select class="select" id="performance-select">
+                                <option value="30">Últimos 30 dias</option>
+                                <option value="90">Últimos 3 meses</option>
+                                <option value="365">Último ano</option>
+                            </select>
+                        </div>
+
+                        <div class="chart-legend">
+                            <span><i class="legend-line revenue"></i> Faturamento</span>
+                            <span><i class="legend-line expenses"></i> Despesas</span>
+                        </div>
+
+                        <div class="line-chart" id="overview-chart">
+                            <div class="chart-y">
+                                <span>10k</span>
+                                <span>7,5k</span>
+                                <span>5k</span>
+                                <span>2,5k</span>
+                                <span>0</span>
+                            </div>
+
+                            <div class="chart-stage">
+                                <div class="horizontal-grid">
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                </div>
+
+                                <svg viewBox="0 0 760 245" preserveAspectRatio="none" aria-label="Gráfico de faturamento e despesas">
+                                    <defs>
+                                        <linearGradient id="revenueFill" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0" stop-color="#2b9f70" stop-opacity=".20"/>
+                                            <stop offset="1" stop-color="#2b9f70" stop-opacity="0"/>
+                                        </linearGradient>
+                                    </defs>
+
+                                    <path class="chart-area-fill"
+                                          d="M0 191 C48 175 65 185 105 145 S168 150 211 121 S277 133 319 101 S392 111 434 79 S495 96 540 55 S612 92 659 48 S717 59 760 28 L760 245 L0 245 Z"></path>
+
+                                    <path class="chart-expense-line"
+                                          d="M0 218 C55 206 72 220 111 190 S170 196 216 172 S280 180 321 160 S390 170 431 142 S500 157 544 124 S610 145 660 111 S719 126 760 100"></path>
+
+                                    <path class="chart-revenue-line"
+                                          d="M0 191 C48 175 65 185 105 145 S168 150 211 121 S277 133 319 101 S392 111 434 79 S495 96 540 55 S612 92 659 48 S717 59 760 28"></path>
+
+                                    <circle class="chart-point" cx="760" cy="28" r="5"></circle>
+                                </svg>
+
+                                <div class="chart-x">
+                                    <span>01</span><span>07</span><span>14</span><span>21</span><span>28</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card insight-card">
+                        <div class="card-header">
+                            <div>
+                                <span class="section-kicker">LEITURA DO NEGÓCIO</span>
+                                <h3>O que merece atenção</h3>
+                            </div>
+                            <span class="count-badge" id="insight-count">4</span>
+                        </div>
+
+                        <div class="insight-list" id="insight-list">
+                            <div class="insight-item warning">
+                                <div class="insight-symbol">!</div>
+                                <div>
+                                    <strong>3 produtos estão com estoque baixo</strong>
+                                    <p>Você pode perder vendas caso não reponha em breve.</p>
+                                </div>
+                                <button class="link-button" data-view-jump="stock">Ver</button>
+                            </div>
+
+                            <div class="insight-item positive">
+                                <div class="insight-symbol">↗</div>
+                                <div>
+                                    <strong>As vendas cresceram 12,4%</strong>
+                                    <p>O ritmo atual está acima do mês anterior.</p>
+                                </div>
+                                <button class="link-button" data-view-jump="analytics">Analisar</button>
+                            </div>
+
+                            <div class="insight-item info">
+                                <div class="insight-symbol">R$</div>
+                                <div>
+                                    <strong>Produto com maior margem: Café especial</strong>
+                                    <p>Representa 17% do resultado das vendas.</p>
+                                </div>
+                                <button class="link-button" data-view-jump="analytics">Ver</button>
+                            </div>
+
+                            <div class="insight-item purple">
+                                <div class="insight-symbol">♙</div>
+                                <div>
+                                    <strong>18 novos clientes neste mês</strong>
+                                    <p>4 deles já voltaram a comprar.</p>
+                                </div>
+                                <button class="link-button" data-view-jump="customers">Ver</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="section-grid three-columns">
+                    <article class="card compact-card">
+                        <div class="card-header">
+                            <div>
+                                <span class="section-kicker">ESTOQUE</span>
+                                <h3>O que está saindo mais</h3>
+                            </div>
+                            <button class="link-button" data-view-jump="stock">Ver estoque</button>
+                        </div>
+                        <div class="rank-list" id="top-products"></div>
+                    </article>
+
+                    <article class="card compact-card">
+                        <div class="card-header">
+                            <div>
+                                <span class="section-kicker">CLIENTES</span>
+                                <h3>Relacionamento</h3>
+                            </div>
+                            <button class="link-button" data-view-jump="customers">Abrir</button>
+                        </div>
+                        <div class="customer-stat-list">
+                            <div><span>Novos clientes</span><strong>18</strong><small class="positive">+28%</small></div>
+                            <div><span>Recorrentes</span><strong>87</strong><small>47% da base</small></div>
+                            <div><span>Inativos</span><strong>21</strong><small class="warning">atenção</small></div>
+                        </div>
+                    </article>
+
+                    <article class="card compact-card">
+                        <div class="card-header">
+                            <div>
+                                <span class="section-kicker">META DO MÊS</span>
+                                <h3>Faturamento</h3>
+                            </div>
+                            <span class="goal-percent">84%</span>
+                        </div>
+                        <div class="goal-value">
+                            <strong>R$ 8.450</strong>
+                            <span>de R$ 10.000</span>
+                        </div>
+                        <div class="progress"><span style="width:84%"></span></div>
+                        <p class="goal-caption">Faltam <strong>R$ 1.550</strong> para atingir sua meta.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- =========================
+                 VIEW: ANALYTICS
+            ========================== -->
+            <section class="view" id="view-analytics">
+                <div class="view-intro">
+                    <div>
+                        <span class="section-kicker">INTELIGÊNCIA DO NEGÓCIO</span>
+                        <h2>Estatísticas</h2>
+                        <p>Transforme os números da sua empresa em informações que ajudam nas decisões.</p>
+                    </div>
+                </div>
+
+                <div class="analytics-kpis">
+                    <article class="analytics-kpi">
+                        <span>Ticket médio</span>
+                        <strong>R$ 67,06</strong>
+                        <small class="positive">↑ 5,2%</small>
+                    </article>
+                    <article class="analytics-kpi">
+                        <span>Margem média</span>
+                        <strong>62,4%</strong>
+                        <small class="positive">↑ 3,8 p.p.</small>
+                    </article>
+                    <article class="analytics-kpi">
+                        <span>Taxa de retorno</span>
+                        <strong>47%</strong>
+                        <small class="positive">↑ 6,1%</small>
+                    </article>
+                    <article class="analytics-kpi">
+                        <span>Conversão</span>
+                        <strong>31%</strong>
+                        <small>312 interessados</small>
+                    </article>
+                </div>
+
+                <div class="section-grid two-columns">
+                    <article class="card insight-large">
+                        <div class="card-header">
+                            <div>
+                                <span class="section-kicker">ANÁLISE AUTOMÁTICA</span>
+                                <h3>Onde existe oportunidade?</h3>
+                            </div>
+                        </div>
+
+                        <div class="opportunity-list">
+                            <div class="opportunity-item">
+                                <div class="opportunity-number">01</div>
+                                <div>
+                                    <strong>Aumente o estoque do Café especial</strong>
+                                    <p>O produto vendeu 32% mais unidades nos últimos 30 dias e está próximo do limite mínimo.</p>
+                                </div>
+                                <span class="opportunity-tag green-tag">Estoque</span>
+                            </div>
+
+                            <div class="opportunity-item">
+                                <div class="opportunity-number">02</div>
+                                <div>
+                                    <strong>Recupere clientes inativos</strong>
+                                    <p>21 clientes não compram há mais de 45 dias. Uma oferta simples pode reativar parte dessa base.</p>
+                                </div>
+                                <span class="opportunity-tag blue-tag">Clientes</span>
+                            </div>
+
+                            <div class="opportunity-item">
+                                <div class="opportunity-number">03</div>
+                                <div>
+                                    <strong>Observe sua despesa com fornecedores</strong>
+                                    <p>Esse custo aumentou 8% neste período enquanto o faturamento cresceu 12,4%.</p>
+                                </div>
+                                <span class="opportunity-tag orange-tag">Financeiro</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card bars-card">
+                        <div class="card-header">
+                            <div>
+                                <span class="section-kicker">VENDAS POR DIA</span>
+                                <h3>Quando seu negócio vende mais?</h3>
+                            </div>
+                        </div>
+                        <div class="vertical-chart">
+                            <div class="v-bars">
+                                <div><span style="height:48%"></span><small>Seg</small></div>
+                                <div><span style="height:66%"></span><small>Ter</small></div>
+                                <div><span style="height:59%"></span><small>Qua</small></div>
+                                <div><span style="height:78%"></span><small>Qui</small></div>
+                                <div><span style="height:74%"></span><small>Sex</small></div>
+                                <div class="highlight"><span style="height:95%"></span><small>Sáb</small></div>
+                                <div><span style="height:54%"></span><small>Dom</small></div>
+                            </div>
+                        </div>
+                        <p class="chart-note">Sábado representa <strong>21%</strong> das suas vendas semanais.</p>
+                    </article>
+                </div>
+
+                <article class="card table-card">
+                    <div class="card-header">
+                        <div>
+                            <span class="section-kicker">DESEMPENHO DOS PRODUTOS</span>
+                            <h3>O que realmente traz resultado</h3>
+                        </div>
+                        <button class="secondary-button" id="export-report-btn">Exportar relatório</button>
+                    </div>
+
+                    <div class="table-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Produto</th>
+                                    <th>Vendas</th>
+                                    <th>Faturamento</th>
+                                    <th>Margem</th>
+                                    <th>Tendência</th>
+                                </tr>
+                            </thead>
+                            <tbody id="analytics-table"></tbody>
+                        </table>
+                    </div>
+                </article>
+            </section>
+
+            <!-- =========================
+                 VIEW: FINANCE
+            ========================== -->
+            <section class="view" id="view-finance">
+                <div class="view-intro with-action">
+                    <div>
+                        <span class="section-kicker">DINHEIRO DO NEGÓCIO</span>
+                        <h2>Financeiro</h2>
+                        <p>Acompanhe entradas, despesas e o resultado da empresa.</p>
+                    </div>
+                    <button class="primary-button" data-modal="expense">+ Registrar despesa</button>
+                </div>
+
+                <div class="finance-summary">
+                    <article class="finance-main-card">
+                        <span>Saldo projetado</span>
+                        <strong>R$ 6.120,00</strong>
+                        <small>Considerando contas a pagar e receber</small>
+                        <div class="mini-metrics">
+                            <div><span>A receber</span><b class="positive">R$ 2.840</b></div>
+                            <div><span>A pagar</span><b class="negative">R$ 1.120</b></div>
+                        </div>
+                    </article>
+
+                    <article class="finance-info-card">
+                        <span>Entradas</span>
+                        <strong>R$ 8.450,00</strong>
+                        <small class="positive">↑ 12,4% no período</small>
+                    </article>
+
+                    <article class="finance-info-card">
+                        <span>Despesas</span>
+                        <strong>R$ 3.180,00</strong>
+                        <small class="warning">↑ 8,0% no período</small>
+                    </article>
+                </div>
+
+                <div class="section-grid two-columns">
+                    <article class="card">
+                        <div class="card-header">
+                            <div>
+                                <span class="section-kicker">CATEGORIAS</span>
+                                <h3>Para onde está indo o dinheiro?</h3>
+                            </div>
+                        </div>
+                        <div class="expense-bars">
+                            <div><span>Fornecedores</span><b>R$ 1.420</b><i><em style="width:82%"></em></i></div>
+                            <div><span>Operação</span><b>R$ 780</b><i><em style="width:51%"></em></i></div>
+                            <div><span>Impostos</span><b>R$ 460</b><i><em style="width:31%"></em></i></div>
+                            <div><span>Marketing</span><b>R$ 320</b><i><em style="width:21%"></em></i></div>
+                            <div><span>Outros</span><b>R$ 200</b><i><em style="width:14%"></em></i></div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-header">
+                            <div>
+                                <span class="section-kicker">MOVIMENTAÇÕES</span>
+                                <h3>Últimos lançamentos</h3>
+                            </div>
+                        </div>
+                        <div class="transaction-list" id="transaction-list"></div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- =========================
+                 VIEW: STOCK
+            ========================== -->
+            <section class="view" id="view-stock">
+                <div class="view-intro with-action">
+                    <div>
+                        <span class="section-kicker">PRODUTOS</span>
+                        <h2>Estoque</h2>
+                        <p>Entenda o que está vendendo, o que está parado e o que precisa de reposição.</p>
+                    </div>
+                    <button class="primary-button" data-modal="product">+ Adicionar produto</button>
+                </div>
+
+                <div class="stock-metrics">
+                    <article><span>Itens em estoque</span><strong id="stock-total-items">251</strong><small>unidades</small></article>
+                    <article><span>Valor em estoque</span><strong>R$ 12.840</strong><small>preço de custo estimado</small></article>
+                    <article><span>Estoque baixo</span><strong class="warning-text" id="stock-low-count">3</strong><small>produtos</small></article>
+                    <article><span>Produtos parados</span><strong>4</strong><small>há mais de 30 dias</small></article>
+                </div>
+
+                <div class="toolbar">
+                    <div class="search-box">
+                        <span>⌕</span>
+                        <input id="stock-search" type="search" placeholder="Pesquisar produto...">
+                    </div>
+                    <select class="select" id="stock-filter">
+                        <option value="all">Todos os produtos</option>
+                        <option value="low">Estoque baixo</option>
+                        <option value="available">Disponíveis</option>
+                    </select>
+                </div>
+
+                <article class="card table-card">
+                    <div class="table-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Produto</th>
+                                    <th>Categoria</th>
+                                    <th>Estoque</th>
+                                    <th>Vendas 30d</th>
+                                    <th>Preço</th>
+                                    <th>Situação</th>
+                                </tr>
+                            </thead>
+                            <tbody id="stock-table"></tbody>
+                        </table>
+                    </div>
+                </article>
+            </section>
+
+            <!-- =========================
+                 VIEW: SALES
+            ========================== -->
+            <section class="view" id="view-sales">
+                <div class="view-intro with-action">
+                    <div>
+                        <span class="section-kicker">MOVIMENTAÇÕES</span>
+                        <h2>Vendas</h2>
+                        <p>Registre as vendas e acompanhe como elas impactam seu negócio.</p>
+                    </div>
+                    <button class="primary-button" data-modal="sale">+ Registrar venda</button>
+                </div>
+
+                <div class="sales-top">
+                    <article class="card sales-today">
+                        <div class="card-header">
+                            <div><span class="section-kicker">HOJE</span><h3>Resumo</h3></div>
+                            <span class="date-label">24 set</span>
+                        </div>
+                        <div class="today-number">8</div>
+                        <p>vendas realizadas hoje</p>
+                        <div class="today-footer"><span>Faturamento</span><strong>R$ 642,00</strong></div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-header">
+                            <div><span class="section-kicker">FORMAS DE PAGAMENTO</span><h3>Como seus clientes pagam?</h3></div>
+                        </div>
+                        <div class="payment-list">
+                            <div><span>Pix</span><strong>52%</strong><i><em style="width:52%"></em></i></div>
+                            <div><span>Cartão</span><strong>34%</strong><i><em style="width:34%"></em></i></div>
+                            <div><span>Dinheiro</span><strong>14%</strong><i><em style="width:14%"></em></i></div>
+                        </div>
+                    </article>
+                </div>
+
+                <article class="card table-card">
+                    <div class="card-header">
+                        <div><span class="section-kicker">HISTÓRICO</span><h3>Vendas recentes</h3></div>
+                    </div>
+                    <div class="table-scroll">
+                        <table>
+                            <thead><tr><th>Cliente</th><th>Horário</th><th>Itens</th><th>Pagamento</th><th>Valor</th><th>Status</th></tr></thead>
+                            <tbody id="sales-table"></tbody>
+                        </table>
+                    </div>
+                </article>
+            </section>
+
+            <!-- =========================
+                 VIEW: CUSTOMERS
+            ========================== -->
+            <section class="view" id="view-customers">
+                <div class="view-intro with-action">
+                    <div>
+                        <span class="section-kicker">RELACIONAMENTO</span>
+                        <h2>Clientes</h2>
+                        <p>Entenda quem compra, quem volta e quem pode ser recuperado.</p>
+                    </div>
+                    <button class="primary-button" data-modal="customer">+ Novo cliente</button>
+                </div>
+
+                <div class="customer-overview">
+                    <article class="customer-overview-main">
+                        <div>
+                            <span>Total de clientes</span>
+                            <strong id="customer-total">184</strong>
+                            <small>ativos nos últimos 90 dias</small>
+                        </div>
+                        <div class="customer-circle">47%</div>
+                    </article>
+                    <article><span>Novos no mês</span><strong>18</strong><small class="positive">+28%</small></article>
+                    <article><span>Recorrentes</span><strong>87</strong><small>47% da base</small></article>
+                    <article><span>Inativos</span><strong>21</strong><small class="warning">recuperação</small></article>
+                </div>
+
+                <article class="card customer-grid-card">
+                    <div class="card-header">
+                        <div><span class="section-kicker">BASE DE CLIENTES</span><h3>Relacionamento</h3></div>
+                        <div class="search-box compact"><span>⌕</span><input id="customer-search" type="search" placeholder="Buscar cliente..."></div>
+                    </div>
+                    <div class="customer-grid" id="customer-grid"></div>
+                </article>
+            </section>
+
+            <!-- =========================
+                 VIEW: GROWTH
+            ========================== -->
+            <section class="view" id="view-growth">
+                <div class="view-intro">
+                    <div>
+                        <span class="section-kicker">PRÓXIMOS PASSOS</span>
+                        <h2>Oportunidades</h2>
+                        <p>Ideias e alertas para ajudar você a transformar dados em ação.</p>
+                    </div>
+                </div>
+
+                <div class="growth-hero">
+                    <div>
+                        <span class="soft-pill">RECOMENDAÇÕES DO FORTE</span>
+                        <h2>Você já tem dados suficientes para encontrar novas oportunidades.</h2>
+                        <p>Comece pelas ações de maior impacto para o momento do seu negócio.</p>
+                    </div>
+                    <div class="growth-score">
+                        <span>Índice de acompanhamento</span>
+                        <strong>82<span>/100</span></strong>
+                        <small>dados atualizados hoje</small>
+                    </div>
+                </div>
+
+                <div class="opportunity-cards">
+                    <article class="opportunity-card">
+                        <span class="opportunity-tag green-tag">ESTOQUE</span>
+                        <h3>Repor Café especial</h3>
+                        <p>Seu estoque atual cobre aproximadamente 4 dias no ritmo de vendas atual.</p>
+                        <button class="secondary-button" data-view-jump="stock">Ver produto →</button>
+                    </article>
+
+                    <article class="opportunity-card">
+                        <span class="opportunity-tag blue-tag">CLIENTES</span>
+                        <h3>Reativar 21 clientes</h3>
+                        <p>Essas pessoas compraram no passado, mas não voltaram nos últimos 45 dias.</p>
+                        <button class="secondary-button" data-view-jump="customers">Ver clientes →</button>
+                    </article>
+
+                    <article class="opportunity-card">
+                        <span class="opportunity-tag orange-tag">VENDAS</span>
+                        <h3>Explore o sábado</h3>
+                        <p>O sábado é seu maior dia de vendas. Uma campanha pode aumentar ainda mais o movimento.</p>
+                        <button class="secondary-button" data-view-jump="sales">Ver vendas →</button>
+                    </article>
+                </div>
+
+                <article class="card tips-card">
+                    <div class="card-header">
+                        <div><span class="section-kicker">IDEIAS DE CRESCIMENTO</span><h3>Pequenas ações, acompanhadas por dados</h3></div>
+                    </div>
+                    <div class="tips-grid">
+                        <div><span>01</span><strong>Criar oferta para clientes inativos</strong><p>Use uma promoção simples para estimular o retorno.</p></div>
+                        <div><span>02</span><strong>Combinar produtos de alta saída</strong><p>Monte um combo com produtos complementares.</p></div>
+                        <div><span>03</span><strong>Definir meta semanal</strong><p>Quebre a meta mensal em objetivos mais fáceis de acompanhar.</p></div>
+                        <div><span>04</span><strong>Acompanhar despesas</strong><p>Observe categorias que crescerem acima do faturamento.</p></div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- =========================
+                 VIEW: STORE
+            ========================== -->
+            <section class="view" id="view-store">
+                <div class="view-intro with-action">
+                    <div>
+                        <span class="section-kicker">PRESENÇA DIGITAL</span>
+                        <h2>Vitrine digital</h2>
+                        <p>Uma página simples para apresentar seu negócio e seus produtos.</p>
+                    </div>
+                    <button class="primary-button" id="share-store-btn">↗ Compartilhar</button>
+                </div>
+
+                <div class="store-layout">
+                    <article class="store-preview">
+                        <div class="store-cover">
+                            <span class="soft-pill">VITRINE ONLINE</span>
+                            <h2>Mercadinho Silva</h2>
+                            <p>Produtos do dia a dia, pertinho de você.</p>
+                            <span class="store-location">⌖ Fortaleza · CE</span>
+                        </div>
+                        <div class="store-content">
+                            <div class="store-title">
+                                <div class="store-avatar">MS</div>
+                                <div><strong>Mercadinho Silva</strong><span>Comércio local</span></div>
+                                <button class="secondary-button">Seguir</button>
+                            </div>
+                            <div class="store-products" id="store-products"></div>
+                        </div>
+                    </article>
+
+                    <aside class="store-settings card">
+                        <div class="card-header">
+                            <div><span class="section-kicker">CONFIGURAÇÃO</span><h3>Sua vitrine</h3></div>
+                        </div>
+                        <label class="form-field">
+                            Nome do negócio
+                            <input id="store-name-input" value="Mercadinho Silva">
+                        </label>
+                        <label class="form-field">
+                            Descrição
+                            <textarea id="store-description-input">Produtos do dia a dia, pertinho de você.</textarea>
+                        </label>
+                        <div class="toggle-row"><span>Mostrar preços</span><button class="toggle on" data-toggle></button></div>
+                        <div class="toggle-row"><span>Receber interessados</span><button class="toggle on" data-toggle></button></div>
+                        <button class="primary-button full-width" id="save-store-btn">Salvar alterações</button>
+                    </aside>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Quick action panel -->
+    <div class="quick-menu" id="quick-menu">
+        <button data-modal="sale"><span class="quick-menu-icon green">↗</span><span><strong>Registrar venda</strong><small>Adicionar uma nova venda</small></span></button>
+        <button data-modal="expense"><span class="quick-menu-icon orange">R$</span><span><strong>Registrar despesa</strong><small>Adicionar uma saída</small></span></button>
+        <button data-modal="product"><span class="quick-menu-icon blue">▦</span><span><strong>Adicionar produto</strong><small>Atualizar seu estoque</small></span></button>
+        <button data-modal="customer"><span class="quick-menu-icon purple">♙</span><span><strong>Novo cliente</strong><small>Adicionar à sua base</small></span></button>
+    </div>
+
+    <!-- Period dropdown -->
+    <div class="period-menu" id="period-menu">
+        <button data-period="Este mês">Este mês</button>
+        <button data-period="Mês anterior">Mês anterior</button>
+        <button data-period="Últimos 90 dias">Últimos 90 dias</button>
+        <button data-period="Este ano">Este ano</button>
+    </div>
+
+    <!-- Notification drawer -->
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <aside class="notification-drawer" id="notification-drawer">
+        <div class="drawer-header">
+            <div><span class="section-kicker">CENTRAL</span><h3>Notificações</h3></div>
+            <button id="close-drawer">×</button>
+        </div>
+        <div class="drawer-list">
+            <div class="drawer-item warning"><span>!</span><div><strong>Estoque baixo</strong><p>Café especial precisa de reposição.</p><small>há 20 min</small></div></div>
+            <div class="drawer-item positive"><span>↗</span><div><strong>Meta avançando</strong><p>Você atingiu 84% da meta do mês.</p><small>há 1 h</small></div></div>
+            <div class="drawer-item info"><span>♙</span><div><strong>Novo cliente</strong><p>Mariana realizou sua primeira compra.</p><small>há 2 h</small></div></div>
+        </div>
+    </aside>
+
+    <!-- Modal -->
+    <div class="modal-backdrop" id="modal-backdrop">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" id="modal-close" aria-label="Fechar">×</button>
+            <span class="section-kicker" id="modal-kicker">NOVA MOVIMENTAÇÃO</span>
+            <h3 id="modal-title">Registrar venda</h3>
+            <form id="modal-form">
+                <div id="modal-fields"></div>
+                <div class="modal-actions">
+                    <button type="button" class="secondary-button" id="modal-cancel">Cancelar</button>
+                    <button type="submit" class="primary-button" id="modal-submit">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
