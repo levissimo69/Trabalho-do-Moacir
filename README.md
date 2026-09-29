@@ -1,8 +1,8 @@
-# Conecta Mei — Front-end do SaaS para pequenos negócios
+# Forte — Front-end do SaaS para pequenos negócios
 
 ## Conceito
 
-O ConectaMei é apresentado como uma plataforma SaaS de apoio ao pequeno empreendedor.
+O Forte é apresentado como uma plataforma SaaS de apoio ao pequeno empreendedor.
 
 Várias empresas podem utilizar a mesma plataforma por assinatura mensal. Cada negócio possui seus próprios dados e um ambiente personalizado, enquanto o Forte transforma esses dados em:
 
